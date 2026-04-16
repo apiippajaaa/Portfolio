@@ -1,0 +1,61 @@
+{
+    "featured": {
+      "title": "SkinyLabs Marketplace",
+      "description": "A scalable digital product platform designed for automation, performance, and seamless creator experience.",
+      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1600&auto=format&fit=crop",
+      "meta": "Case Study · 2025",
+      "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+      "link": "/projects/skinylabs"
+    },
+    "projects": [
+      {
+        "title": "Finance Management System",
+        "description": "Real-time financial tracking with budgeting logic and spending insights.",
+        "tech": ["Next.js", "PostgreSQL", "Prisma"],
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/finance-system"
+      },
+      {
+        "title": "Creative Portfolio Platform",
+        "description": "Modern portfolio system focused on storytelling, motion, and performance.",
+        "tech": ["Next.js", "Framer Motion"],
+        "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/portfolio-platform"
+      },
+      {
+        "title": "Task Management App",
+        "description": "Minimal productivity system designed for clarity, speed, and focus.",
+        "tech": ["React", "Tailwind"],
+        "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/task-manager"
+      },
+      {
+        "title": "E-Commerce Dashboard",
+        "description": "Admin dashboard for managing products, orders, and analytics in real-time.",
+        "tech": ["Next.js", "Chart.js", "Firebase"],
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/ecommerce-dashboard"
+      },
+      {
+        "title": "Authentication System",
+        "description": "Secure authentication system with role-based access and session handling.",
+        "tech": ["NextAuth", "JWT", "MongoDB"],
+        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/auth-system"
+      },
+      {
+        "title": "Booking Platform",
+        "description": "Online booking system with scheduling, availability logic, and notifications.",
+        "tech": ["Next.js", "Node.js", "MySQL"],
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/booking-platform"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Data visualization platform for tracking performance metrics and insights.",
+        "tech": ["React", "D3.js"],
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop",
+        "link": "/projects/analytics-dashboard"
+      }
+    ]
+  }
