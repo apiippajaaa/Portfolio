@@ -41,9 +41,9 @@ const item = {
 
 const socials = [
   { name: "Email", href: "mailto:afifmisbahuddin7@gmail.com" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-  { name: "GitHub", href: "https://github.com/yourusername" },
-  { name: "WhatsApp", href: "https://wa.me/628xxxxxxxxxx" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/afifmisbahuddin" },
+  { name: "GitHub", href: "https://github.com/afifmisbahuddin" },
+  { name: "WhatsApp", href: "https://wa.me/6285601569136" },
 ];
 
 export default function GetInTouch() {
@@ -60,7 +60,7 @@ export default function GetInTouch() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center"
+        className="w-full max-w-4xl grid md:grid-cols-2 gap-12 items-center"
       >
         {/* LEFT */}
         <motion.div variants={left}>

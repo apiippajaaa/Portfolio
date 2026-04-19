@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Background />
 
         {/* ✅ HAMBURGER (FIXED DI ATAS) */}
-        <div className="fixed top-6 right-6 md:top-8 md:right-8 z-[999]">
+        <div className="fixed top-6 right-6 md:top-8 md:right-8 z-999">
           <SectionIndicator />
           <HamburgerMenu />
         </div>

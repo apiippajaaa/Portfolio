@@ -1,61 +1,77 @@
 {
-    "featured": {
-      "title": "SkinyLabs Marketplace",
-      "description": "A scalable digital product platform designed for automation, performance, and seamless creator experience.",
-      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1600&auto=format&fit=crop",
-      "meta": "Case Study · 2025",
-      "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-      "link": "/projects/skinylabs"
+  "code": [
+    {
+      "title": "Hoksy Realtime Game",
+      "isCore": true,
+      "description": "A realtime multiplayer hockey game built with smooth physics and WebSocket sync.",
+      "image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop",
+      "link": "https://github.com/yourusername/hoksy",
+      "tech": ["Next.js", "TypeScript", "WebSocket"]
     },
-    "projects": [
-      {
-        "title": "Finance Management System",
-        "description": "Real-time financial tracking with budgeting logic and spending insights.",
-        "tech": ["Next.js", "PostgreSQL", "Prisma"],
-        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/finance-system"
-      },
-      {
-        "title": "Creative Portfolio Platform",
-        "description": "Modern portfolio system focused on storytelling, motion, and performance.",
-        "tech": ["Next.js", "Framer Motion"],
-        "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/portfolio-platform"
-      },
-      {
-        "title": "Task Management App",
-        "description": "Minimal productivity system designed for clarity, speed, and focus.",
-        "tech": ["React", "Tailwind"],
-        "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/task-manager"
-      },
-      {
-        "title": "E-Commerce Dashboard",
-        "description": "Admin dashboard for managing products, orders, and analytics in real-time.",
-        "tech": ["Next.js", "Chart.js", "Firebase"],
-        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/ecommerce-dashboard"
-      },
-      {
-        "title": "Authentication System",
-        "description": "Secure authentication system with role-based access and session handling.",
-        "tech": ["NextAuth", "JWT", "MongoDB"],
-        "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/auth-system"
-      },
-      {
-        "title": "Booking Platform",
-        "description": "Online booking system with scheduling, availability logic, and notifications.",
-        "tech": ["Next.js", "Node.js", "MySQL"],
-        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/booking-platform"
-      },
-      {
-        "title": "Analytics Dashboard",
-        "description": "Data visualization platform for tracking performance metrics and insights.",
-        "tech": ["React", "D3.js"],
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop",
-        "link": "/projects/analytics-dashboard"
-      }
-    ]
-  }
+    {
+      "title": "API Tester Tool",
+      "description": "Lightweight API testing tool built for developers.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+      "link": "#",
+      "tech": ["Next.js", "Tailwind"]
+    },
+    {
+      "title": "Portfolio Website",
+      "description": "Modern personal portfolio with animation and clean UI.",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+      "link": "#",
+      "tech": ["Next.js", "Framer Motion"]
+    },
+    {
+      "title": "Realtime Chat App",
+      "description": "Socket-based realtime chat application.",
+      "image": "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop",
+      "link": "#",
+      "tech": ["Node.js", "Socket.io"]
+    }
+  ],
+
+  "design": [
+    {
+      "title": "Fintech Mobile UI",
+      "isCore": true,
+      "description": "Clean mobile banking UI with strong usability focus.",
+      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop",
+      "tools": ["Figma", "UI/UX"]
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Data-heavy dashboard with modern layout.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "tools": ["Figma"]
+    },
+    {
+      "title": "Landing Page Concept",
+      "description": "Minimal landing page with strong typography.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      "tools": ["Figma"]
+    }
+  ],
+
+  "video": [
+    {
+      "title": "Cinematic Product Video",
+      "isCore": true,
+      "description": "High-end cinematic product showcase.",
+      "image": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
+    },
+    {
+      "title": "Brand Motion Intro",
+      "description": "Short animated intro for branding.",
+      "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+    },
+    {
+      "title": "Creative Reel",
+      "description": "Compilation of creative works.",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    }
+  ]
+}

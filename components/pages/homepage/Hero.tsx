@@ -6,9 +6,6 @@ import { useRef } from "react";
 import Link from "next/link";
 import { useSectionHash } from "@/hooks/useSectionHash";
 
-// ==============================
-// 🎬 ANIMATION VARIANTS
-// ==============================
 const container = {
   initial: {},
   animate: {
@@ -31,9 +28,6 @@ const fadeUp = {
   },
 };
 
-// ==============================
-// 🧩 COMPONENT
-// ==============================
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
 
@@ -51,7 +45,6 @@ export default function Hero() {
         viewport={{ once: false, amount: 0.5 }}
         className="flex flex-col items-center text-center"
       >
-        {/* 🏷️ TITLE */}
         <motion.h1
           variants={fadeUp}
           className="text-3xl md:text-5xl font-semibold text-white"
@@ -59,7 +52,6 @@ export default function Hero() {
           Nur Afif Misbahuddin
         </motion.h1>
 
-        {/* 🏷️ SUBTITLE */}
         <motion.p
           variants={fadeUp}
           className="mt-3 text-sm md:text-base text-zinc-400"
@@ -67,7 +59,6 @@ export default function Hero() {
           Fullstack Developer • Designer • Video Editor
         </motion.p>
 
-        {/* 🏷️ CTA */}
         <motion.div
           variants={fadeUp}
           className="mt-6 flex gap-4 justify-center"
@@ -93,7 +84,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* 💧 Scroll Indicator */}
       <Scroll />
     </section>
   );

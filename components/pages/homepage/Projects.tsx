@@ -16,7 +16,6 @@ const fadeUp = {
 
 const images = ["/1.jpg", "/2.jpg", "/3.jpg"];
 
-// 🎴 IMPROVED CARD SYSTEM (NO FADE)
 const cardVariants = {
   center: {
     x: 0,
@@ -80,9 +79,8 @@ export default function Projects() {
         initial="initial"
         whileInView="animate"
         viewport={{ once: false, amount: 0.4 }}
-        className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-center"
+        className="w-full max-w-4xl grid md:grid-cols-2 gap-12 items-center"
       >
-        {/* LEFT */}
         <motion.div
           variants={fadeUp}
           className="text-center md:text-left flex flex-col items-center md:items-start"
@@ -104,10 +102,9 @@ export default function Projects() {
           </Link>
         </motion.div>
 
-        {/* RIGHT */}
         <motion.div
           variants={fadeUp}
-          className="relative w-full max-w-md h-[280px] mx-auto"
+          className="relative w-full max-w-md h-70 mx-auto"
         >
           <div className="relative w-full h-full flex items-center justify-center">
             {images.map((src, i) => {
@@ -118,7 +115,7 @@ export default function Projects() {
                   key={src}
                   src={`projects/${src}`}
                   alt={`Project ${i}`}
-                  className="absolute w-[85%] h-[240px] md:h-[260px] object-cover rounded-2xl border border-zinc-800 shadow-2xl cursor-pointer"
+                  className="absolute w-[85%] h-60 md:h-65 object-cover rounded-2xl border border-zinc-800 shadow-2xl cursor-pointer"
                   variants={cardVariants}
                   animate={position}
                   transition={{
