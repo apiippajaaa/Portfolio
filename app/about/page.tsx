@@ -12,7 +12,7 @@ export default function About() {
       <section className="w-full max-w-6xl mx-auto ">
         <section
           id="about"
-          className="min-h-screen snap-start flex items-center px-6 relative"
+          className="min-h-screen snap-start flex items-center  relative"
         >
           <AboutHeader />
         </section>

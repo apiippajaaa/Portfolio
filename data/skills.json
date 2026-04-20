@@ -3,36 +3,50 @@
     "title": "Frontend",
     "description": "Building fast, responsive, and interactive user interfaces.",
     "skills": [
-      { "name": "React", "level": "Advanced", "primary": true },
-      { "name": "Next.js", "level": "Advanced", "primary": true },
-      { "name": "TypeScript", "level": "Advanced", "primary": true },
-      { "name": "Tailwind CSS", "level": "Advanced" },
-      { "name": "Framer Motion", "level": "Intermediate" },
-      { "name": "Zustand", "level": "Intermediate" }
+      { "name": "React" },
+      { "name": "Next.js" },
+      { "name": "TypeScript" },
+      { "name": "JavaScript" },
+      { "name": "Tailwind CSS" },
+      { "name": "Framer Motion" },
+      { "name": "Zustand" },
+      { "name": "Redux" },
+      { "name": "ShadCN UI" },
+      { "name": "HTML5" },
+      { "name": "CSS3" }
     ]
   },
   {
     "title": "Backend",
     "description": "Designing scalable APIs and managing data efficiently.",
     "skills": [
-      { "name": "Node.js", "level": "Advanced", "primary": true },
-      { "name": "Laravel", "level": "Advanced" },
-      { "name": "REST API", "level": "Advanced", "primary": true },
-      { "name": "MySQL", "level": "Advanced" },
-      { "name": "PostgreSQL", "level": "Intermediate" },
-      { "name": "Firebase", "level": "Intermediate" }
+      { "name": "Node.js" },
+      { "name": "Express.js" },
+      { "name": "REST API" },
+      { "name": "Laravel" },
+      { "name": "MySQL" },
+      { "name": "PostgreSQL" },
+      { "name": "MongoDB" },
+      { "name": "Firebase" },
+      { "name": "Prisma" },
+      { "name": "GraphQL" },
+      { "name": "Redis" }
     ]
   },
   {
     "title": "Creative",
     "description": "Crafting intuitive and visually engaging digital experiences.",
     "skills": [
-      { "name": "Figma", "level": "Advanced", "primary": true },
-      { "name": "UI/UX Design", "level": "Advanced", "primary": true },
-      { "name": "Wireframing", "level": "Advanced" },
-      { "name": "Prototyping", "level": "Advanced" },
-      { "name": "Design System", "level": "Intermediate" },
-      { "name": "Branding", "level": "Intermediate" }
+      { "name": "Figma" },
+      { "name": "UI/UX Design" },
+      { "name": "Design Systems" },
+      { "name": "Wireframing" },
+      { "name": "Prototyping" },
+      { "name": "Typography" },
+      { "name": "Color Theory" },
+      { "name": "Motion Design" },
+      { "name": "Illustration" }
+
     ]
   }
 ]

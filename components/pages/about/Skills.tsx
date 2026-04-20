@@ -1,13 +1,11 @@
 "use client";
 
 import skillsData from "@/data/skills.json";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
 type Skill = {
   name: string;
-  level: string;
-  primary?: boolean;
 };
 
 type SkillCategory = {
@@ -17,143 +15,223 @@ type SkillCategory = {
 };
 
 export default function Skills() {
-  const [active, setActive] = useState(0);
   const categories = skillsData as SkillCategory[];
 
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const desktopRef = useRef<HTMLDivElement>(null);
+
+  const [active, setActive] = useState(0);
+  const [padding, setPadding] = useState(0);
+  const [cardHeight, setCardHeight] = useState(0);
+
+  // ================= MOBILE CENTER =================
+  useEffect(() => {
+    const calcPadding = () => {
+      if (!mobileRef.current) return;
+
+      const container = mobileRef.current;
+      const card = container.querySelector("[data-card]") as HTMLElement;
+      if (!card) return;
+
+      setPadding((container.clientWidth - card.clientWidth) / 2);
+    };
+
+    calcPadding();
+    window.addEventListener("resize", calcPadding);
+    return () => window.removeEventListener("resize", calcPadding);
+  }, []);
+
+  // ================= HEIGHT SYNC (BEST PRACTICE) =================
+  useEffect(() => {
+    const getContainer = () =>
+      window.innerWidth < 1024 ? mobileRef.current : desktopRef.current;
+
+    const calcHeight = () => {
+      const container = getContainer();
+      if (!container) return;
+
+      const cards = container.querySelectorAll("[data-card]");
+      let max = 0;
+
+      cards.forEach((card) => {
+        const h = (card as HTMLElement).offsetHeight;
+        if (h > max) max = h;
+      });
+
+      setCardHeight(max);
+    };
+
+    // pakai ResizeObserver (lebih akurat)
+    const observer = new ResizeObserver(calcHeight);
+
+    const observeCards = () => {
+      const container = getContainer();
+      if (!container) return;
+
+      const cards = container.querySelectorAll("[data-card]");
+      cards.forEach((card) => observer.observe(card));
+    };
+
+    observeCards();
+    calcHeight();
+
+    window.addEventListener("resize", calcHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", calcHeight);
+    };
+  }, [categories]);
+
+  // ================= CAROUSEL =================
+  const scrollToIndex = (index: number) => {
+    if (!mobileRef.current) return;
+
+    const container = mobileRef.current;
+    const el = container.children[index] as HTMLElement;
+
+    const offset =
+      el.offsetLeft - container.clientWidth / 2 + el.clientWidth / 2;
+
+    container.scrollTo({
+      left: offset,
+      behavior: "smooth",
+    });
+
+    setActive(index);
+  };
+
+  const next = () => scrollToIndex(Math.min(active + 1, categories.length - 1));
+  const prev = () => scrollToIndex(Math.max(active - 1, 0));
+
+  // ================= CARD =================
+  const Card = ({ cat }: { cat: SkillCategory }) => (
+    <motion.div
+      data-card
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.2 }}
+      style={{ height: cardHeight || "auto" }}
+      className="
+        min-w-[280px] sm:min-w-[340px]
+        snap-center
+        p-6 rounded-2xl
+
+        bg-white/[0.03]
+        border border-white/10
+        backdrop-blur-md
+
+        flex flex-col
+        relative
+
+        transition duration-300
+        hover:bg-white/[0.05]
+        hover:border-white/20
+      "
+    >
+      {/* glass highlight */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
+
+      {/* HEADER */}
+      <div>
+        <h3 className="text-lg font-semibold text-white tracking-tight">
+          {cat.title}
+        </h3>
+        <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
+          {cat.description}
+        </p>
+      </div>
+
+      {/* DIVIDER */}
+      <div className="my-5 h-px w-full bg-white/10" />
+
+      {/* SKILLS */}
+      <div className="flex flex-wrap gap-2 flex-1">
+        {cat.skills.map((skill, i) => (
+          <span
+            key={i}
+            className="
+              px-3 py-1.5 text-xs rounded-full
+              bg-white/[0.05]
+              text-zinc-300
+              border border-white/10
+
+              transition duration-200
+              hover:bg-white/[0.12]
+              hover:text-white
+            "
+          >
+            {skill.name}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-6" />
+    </motion.div>
+  );
+
   return (
-    <section className="py-24 md:py-32 px-5">
-      <div className="mx-auto max-w-4xl">
+    <section className="py-20 md:py-28 px-5">
+      <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <header className="text-center mb-14 md:mb-18">
+        <div className="mb-14 text-center">
           <p className="text-xs tracking-[0.28em] text-zinc-500 uppercase">
             Skills
           </p>
 
-          <h2 className="mt-4 text-3xl md:text-5xl font-semibold text-white tracking-tight">
-            Tools & Technologies
+          <h2 className="mt-3 text-3xl md:text-5xl font-semibold text-white">
+            My Tech Stack
           </h2>
 
-          <p className="mt-4 max-w-md mx-auto text-zinc-400 leading-relaxed">
-            Focused expertise across engineering and design disciplines.
+          <p className="mt-3 text-zinc-400 text-sm max-w-md mx-auto">
+            Technologies I use to build scalable and beautiful products.
           </p>
-        </header>
+        </div>
 
-        {/* 🔥 TOGGLE (APPLE SEGMENTED) */}
-        <div className="mb-12 flex justify-center">
-          <div className="flex gap-1 p-1 rounded-full bg-zinc-900/60 backdrop-blur-sm">
-            {categories.map((cat, i) => {
-              const isActive = active === i;
+        {/* ================= MOBILE ================= */}
+        <div className="lg:hidden relative">
+          <button
+            onClick={prev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-zinc-900/70 border border-zinc-700 text-white flex items-center justify-center"
+          >
+            ←
+          </button>
 
-              return (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className="relative px-3 py-1.5 text-sm rounded-full whitespace-nowrap"
-                >
-                  {/* active pill */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="active-pill"
-                      className="absolute inset-0 bg-white rounded-full"
-                      transition={{
-                        type: "spring",
-                        stiffness: 320,
-                        damping: 30,
-                      }}
-                    />
-                  )}
+          <button
+            onClick={next}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-zinc-900/70 border border-zinc-700 text-white flex items-center justify-center"
+          >
+            →
+          </button>
 
-                  <span
-                    className={`relative z-10 transition ${
-                      isActive
-                        ? "text-black font-medium"
-                        : "text-zinc-400 hover:text-white"
-                    }`}
-                  >
-                    {cat.title}
-                  </span>
-                </button>
-              );
-            })}
+          <div
+            ref={mobileRef}
+            style={{ paddingLeft: padding, paddingRight: padding }}
+            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 scroll-smooth scrollbar-hide"
+          >
+            {categories.map((cat, i) => (
+              <motion.div
+                key={i}
+                className="flex"
+                animate={{
+                  scale: i === active ? 1 : 0.94,
+                  opacity: i === active ? 1 : 0.6,
+                }}
+              >
+                <Card cat={cat} />
+              </motion.div>
+            ))}
           </div>
         </div>
 
-        {/* CONTENT */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="space-y-10 md:space-y-12"
-          >
-            {/* CORE */}
-            <div className="text-center">
-              <p className="text-[11px] text-zinc-500 uppercase tracking-[0.25em] mb-5">
-                Core Skills
-              </p>
-
-              <div
-                className="
-                flex flex-wrap justify-center
-                gap-x-5 gap-y-2.5
-                max-w-2xl mx-auto
-              "
-              >
-                {categories[active].skills
-                  .filter((s) => s.primary)
-                  .map((skill, i) => (
-                    <span
-                      key={i}
-                      className="
-                        text-base md:text-lg
-                        font-medium text-white
-                        tracking-tight
-                        transition
-                        hover:opacity-80
-                      "
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
-              </div>
-            </div>
-
-            {/* DIVIDER */}
-            <div className="h-px bg-zinc-800/60 max-w-xs mx-auto" />
-
-            {/* OTHER */}
-            <div className="text-center">
-              <p className="text-[11px] text-zinc-500 uppercase tracking-[0.25em] mb-5">
-                Other Tools
-              </p>
-
-              <div
-                className="
-                flex flex-wrap justify-center
-                gap-x-4 gap-y-1.5
-                max-w-2xl mx-auto
-              "
-              >
-                {categories[active].skills
-                  .filter((s) => !s.primary)
-                  .map((skill, i) => (
-                    <span
-                      key={i}
-                      className="
-                        text-sm text-zinc-500
-                        transition
-                        hover:text-zinc-300
-                      "
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+        {/* ================= DESKTOP ================= */}
+        <div
+          ref={desktopRef}
+          className="hidden lg:grid grid-cols-3 gap-6 items-stretch"
+        >
+          {categories.map((cat, i) => (
+            <Card key={i} cat={cat} />
+          ))}
+        </div>
       </div>
     </section>
   );

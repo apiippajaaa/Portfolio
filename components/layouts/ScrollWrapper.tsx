@@ -13,7 +13,8 @@ export default function ScrollWrapper({
   return (
     <main
       className={`
-        h-svh
+         min-h-svh
+        overflow-x-auto
         overflow-y-auto
         scroll-smooth
         ${isHome ? "snap-y snap-mandatory no-scrollbar" : ""}

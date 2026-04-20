@@ -34,6 +34,8 @@ export default function About() {
         <motion.div variants={fadeUp} className="w-full ">
           <div className="relative group overflow-hidden rounded-2xl border border-zinc-800">
             <Image
+              width={100}
+              height={100}
               src="/1.jpg"
               alt="About me"
               className="w-full h-65 md:h-75 object-cover transition-transform duration-500 group-hover:scale-[1.04]"
