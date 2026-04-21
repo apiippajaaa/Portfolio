@@ -1,9 +1,8 @@
 "use client";
 
+import ProjectHeader from "@/app/projects/components/Header";
+import ProjectShowcase from "@/app/projects/components/ProjectShowcase";
 import Footer from "@/components/layouts/Footer";
-
-import ProjectHeader from "@/components/pages/projects/Header";
-import ProjectShowcase from "@/components/pages/projects/Showcase";
 
 export default function About() {
   return (
@@ -11,15 +10,12 @@ export default function About() {
       <section className="w-full max-w-6xl mx-auto ">
         <section
           id="about"
-          className="min-h-screen snap-start flex items-center px-6 relative"
+          className="min-h-screen snap-start flex items-center  relative"
         >
           <ProjectHeader />
         </section>
         <ProjectShowcase />
-        {/* <Skills />
-        <Journey />
-        <Philosophy />
-        <GetInTouch /> */}
+        <Footer />
       </section>
     </>
   );

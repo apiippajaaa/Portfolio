@@ -1,7 +1,7 @@
 "use client";
 
 import data from "@/data/projects.json";
-import { ProjectItem } from "@/types/Projects";
+import { ProjectItem } from "@/types/Project";
 import Section from "./showcase/Section";
 
 export default function ProjectShowcase() {

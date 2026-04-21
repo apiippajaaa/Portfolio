@@ -41,7 +41,7 @@ export default function Skills() {
     return () => window.removeEventListener("resize", calcPadding);
   }, []);
 
-  // ================= HEIGHT SYNC (BEST PRACTICE) =================
+  // ================= HEIGHT SYNC =================
   useEffect(() => {
     const getContainer = () =>
       window.innerWidth < 1024 ? mobileRef.current : desktopRef.current;
@@ -61,7 +61,6 @@ export default function Skills() {
       setCardHeight(max);
     };
 
-    // pakai ResizeObserver (lebih akurat)
     const observer = new ResizeObserver(calcHeight);
 
     const observeCards = () => {
@@ -108,28 +107,28 @@ export default function Skills() {
   const Card = ({ cat }: { cat: SkillCategory }) => (
     <motion.div
       data-card
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.2 }}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.25 }}
       style={{ height: cardHeight || "auto" }}
       className="
         min-w-[280px] sm:min-w-[340px]
         snap-center
         p-6 rounded-2xl
-
-        bg-white/[0.03]
+  
+        bg-white/[0.04]
         border border-white/10
-        backdrop-blur-md
-
+        backdrop-blur-xl
+  
         flex flex-col
         relative
-
-        transition duration-300
-        hover:bg-white/[0.05]
+  
+        transition-all duration-300
+        hover:bg-white/[0.06]
         hover:border-white/20
       "
     >
-      {/* glass highlight */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/5" />
+      {/* subtle top highlight */}
+      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.06] to-transparent" />
 
       {/* HEADER */}
       <div>
@@ -145,27 +144,29 @@ export default function Skills() {
       <div className="my-5 h-px w-full bg-white/10" />
 
       {/* SKILLS */}
-      <div className="flex flex-wrap gap-2 flex-1">
-        {cat.skills.map((skill, i) => (
-          <span
-            key={i}
-            className="
-              px-3 py-1.5 text-xs rounded-full
-              bg-white/[0.05]
-              text-zinc-300
-              border border-white/10
-
-              transition duration-200
-              hover:bg-white/[0.12]
-              hover:text-white
-            "
-          >
-            {skill.name}
-          </span>
-        ))}
+      <div className="relative flex-1 overflow-hidden">
+        <div className="flex flex-wrap gap-2 content-start">
+          {cat.skills.map((skill, i) => (
+            <span
+              key={i}
+              className="
+                px-3 py-1.5 text-xs rounded-full
+                bg-white/[0.05]
+                text-zinc-300
+                border border-white/10
+  
+                transition duration-200
+                hover:bg-white/[0.12]
+                hover:text-white
+              "
+            >
+              {skill.name}
+            </span>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-6" />
+      <div className="mt-auto pt-6" />
     </motion.div>
   );
 

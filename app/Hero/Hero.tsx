@@ -1,11 +1,11 @@
 "use client";
 
-import Scroll from "@/components/scroll";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { useSectionHash } from "@/hooks/useSectionHash";
 import ResumeModal from "@/components/ui/ResumeModal";
+import Scroll from "@/components/ui/Scroll";
 
 const container = {
   initial: {},

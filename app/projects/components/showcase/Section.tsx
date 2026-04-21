@@ -6,7 +6,7 @@ import CoreProject from "./CoreProject";
 import ProjectCard from "./ProjectCard";
 import SectionFooter from "./SectionFooter";
 import VideoModal from "./VideoModal";
-import { ProjectItem, SectionType } from "@/types/Projects";
+import { ProjectItem, SectionType } from "@/types/Project";
 
 type Props = {
   title: string;

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ProjectItem } from "@/types/Projects";
+import { ProjectItem } from "@/types/Project";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 

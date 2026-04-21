@@ -1,7 +1,7 @@
-import About from "@/components/pages/homepage/About";
-import GetInTouch from "@/components/pages/homepage/GetInTouch";
-import Hero from "@/components/pages/homepage/Hero";
-import Projects from "@/components/pages/homepage/Projects";
+import About from "@/app/Hero/About";
+import GetInTouch from "@/app/Hero/GetInTouch";
+import Hero from "@/app/Hero/Hero";
+import Projects from "@/app/Hero/Projects";
 
 export default function Home() {
   return (

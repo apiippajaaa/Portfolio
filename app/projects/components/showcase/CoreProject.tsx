@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectItem, SectionType } from "@/types/Projects";
+import { ProjectItem, SectionType } from "@/types/Project";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";

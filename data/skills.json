@@ -1,52 +1,82 @@
 [
   {
     "title": "Frontend",
-    "description": "Building fast, responsive, and interactive user interfaces.",
+    "description": "Building fast, responsive, and user-focused modern interfaces.",
     "skills": [
-      { "name": "React" },
       { "name": "Next.js" },
+      { "name": "React.js" },
       { "name": "TypeScript" },
       { "name": "JavaScript" },
       { "name": "Tailwind CSS" },
+      { "name": "ShadCN UI" },
       { "name": "Framer Motion" },
       { "name": "Zustand" },
       { "name": "Redux" },
-      { "name": "ShadCN UI" },
+      { "name": "Bootstrap" },
+      { "name": "Vite" },
       { "name": "HTML5" },
       { "name": "CSS3" }
     ]
   },
   {
     "title": "Backend",
-    "description": "Designing scalable APIs and managing data efficiently.",
+    "description": "Developing efficient, scalable systems and modern API architectures.",
     "skills": [
+      { "name": "Laravel" },
+      { "name": "PHP" },
+      { "name": "CodeIgniter" },
       { "name": "Node.js" },
       { "name": "Express.js" },
+      { "name": "Go (Golang)" },
       { "name": "REST API" },
-      { "name": "Laravel" },
       { "name": "MySQL" },
       { "name": "PostgreSQL" },
       { "name": "MongoDB" },
-      { "name": "Firebase" },
       { "name": "Prisma" },
-      { "name": "GraphQL" },
+      { "name": "Firebase" },
       { "name": "Redis" }
     ]
   },
   {
-    "title": "Creative",
-    "description": "Crafting intuitive and visually engaging digital experiences.",
+    "title": "Tools & DevOps",
+    "description": "Managing development workflows, deployment, and collaboration efficiently.",
+    "skills": [
+      { "name": "Git" },
+      { "name": "GitHub" },
+      { "name": "Postman" },
+      { "name": "Docker" },
+      { "name": "Vercel" },
+      { "name": "Google Cloud" },
+      { "name": "Linux / VPS" }
+    ]
+  },
+  {
+    "title": "Design",
+    "description": "Designing visuals for branding, UI, and digital media.",
     "skills": [
       { "name": "Figma" },
-      { "name": "UI/UX Design" },
-      { "name": "Design Systems" },
-      { "name": "Wireframing" },
-      { "name": "Prototyping" },
-      { "name": "Typography" },
-      { "name": "Color Theory" },
-      { "name": "Motion Design" },
-      { "name": "Illustration" }
-
+      { "name": "Adobe Photoshop" },
+      { "name": "Adobe Illustrator" },
+      { "name": "CorelDRAW" },
+      { "name": "Canva" }
+    ]
+  },
+  {
+    "title": "Video & Motion",
+    "description": "Producing video and motion content for storytelling and promotion.",
+    "skills": [
+      { "name": "Adobe Premiere Pro" },
+      { "name": "After Effects" },
+      { "name": "DaVinci Resolve" }
+    ]
+  },
+  {
+    "title": "Mobile Development",
+    "description": "Building cross-platform mobile applications with optimal performance.",
+    "skills": [
+      { "name": "Flutter" },
+      { "name": "Dart" },
+      { "name": "Android Studio" }
     ]
   }
 ]
