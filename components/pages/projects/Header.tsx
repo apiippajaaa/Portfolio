@@ -179,7 +179,7 @@ export default function ProjectHeader() {
                 alt=""
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
             </div>
           </motion.div>
         </motion.div>

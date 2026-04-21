@@ -6,7 +6,7 @@ import Background from "../components/layouts/Background";
 import HamburgerMenu from "@/components/layouts/HamburgerMenu";
 import ScrollWrapper from "@/components/layouts/ScrollWrapper";
 import SectionIndicator from "@/components/layouts/SectionIndicator";
-import Footer from "@/components/layouts/Footer";
+import ShowFooter from "@/components/ui/ShowFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main> */}
 
         <ScrollWrapper>{children}</ScrollWrapper>
-        <Footer />
+        <ShowFooter />
       </body>
     </html>
   );

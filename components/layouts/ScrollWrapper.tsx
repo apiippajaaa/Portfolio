@@ -13,7 +13,7 @@ export default function ScrollWrapper({
   return (
     <main
       className={`
-         min-h-svh
+        h-svh
         overflow-x-auto
         overflow-y-auto
         scroll-smooth

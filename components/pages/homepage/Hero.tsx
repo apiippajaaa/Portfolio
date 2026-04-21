@@ -2,9 +2,10 @@
 
 import Scroll from "@/components/scroll";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { useSectionHash } from "@/hooks/useSectionHash";
+import ResumeModal from "@/components/ui/ResumeModal";
 
 const container = {
   initial: {},
@@ -30,8 +31,10 @@ const fadeUp = {
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const [open, setOpen] = useState(false);
 
   useSectionHash(ref, "hero");
+
   return (
     <section
       ref={ref}
@@ -71,20 +74,22 @@ export default function Hero() {
             Portfolio
           </Link>
 
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* RESUME BUTTON */}
+          <button
+            onClick={() => setOpen(true)}
             className="px-5 py-2 text-sm font-medium rounded-full 
             border border-zinc-700 text-zinc-300 
             hover:bg-zinc-800 transition"
           >
             Resume
-          </Link>
+          </button>
         </motion.div>
       </motion.div>
 
       <Scroll />
+
+      {/* MODAL */}
+      <ResumeModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 }
