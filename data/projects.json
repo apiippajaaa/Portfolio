@@ -59,19 +59,22 @@
       "isCore": true,
       "description": "High-end cinematic product showcase.",
       "image": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1200&auto=format&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
+      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
+      "tools": ["Figma", "UI/UX"]
     },
     {
       "title": "Brand Motion Intro",
       "description": "Short animated intro for branding.",
       "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/LXb3EKWsInQ"
+      "videoUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
+      "tools": ["Figma"]
     },
     {
       "title": "Creative Reel",
       "description": "Compilation of creative works.",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",  
+      "tools": ["Figma"]
     }
   ]
 }
