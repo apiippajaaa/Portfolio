@@ -13,15 +13,9 @@ export default function ScrollWrapper({
   return (
     <main
       className={`
-        h-svh
-        overflow-x-auto
-        overflow-y-auto
-        scroll-smooth
-        ${isHome ? "snap-y snap-mandatory no-scrollbar" : ""}
+        w-full
+        ${isHome ? "overflow-hidden h-screen" : "overflow-y-auto min-h-screen"}
       `}
-      style={{
-        WebkitOverflowScrolling: "touch",
-      }}
     >
       {children}
     </main>

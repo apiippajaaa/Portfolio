@@ -1,43 +1,11 @@
 "use client";
 
+import { useRef } from "react";
+import Section from "@/components/fullpage-snap/Section";
 import { useSectionHash } from "@/hooks/useSectionHash";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const left = {
-  hidden: { opacity: 0, x: -60 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" as const },
-  },
-};
-
-const right = {
-  hidden: { opacity: 0, x: 60 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.7, ease: "easeOut" as const },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-  },
-};
+import { fade, staggerContainer } from "@/lib/animation";
 
 const socials = [
   { name: "Email", href: "mailto:afifmisbahuddin7@gmail.com" },
@@ -48,22 +16,24 @@ const socials = [
 
 export default function GetInTouch() {
   const ref = useRef<HTMLElement>(null);
+
   useSectionHash(ref, "getInTouch");
+
   return (
-    <section
-      ref={ref}
-      id="getInTouch"
-      className="min-h-screen snap-start flex items-center justify-center px-6"
-    >
+    <Section ref={ref} id="getInTouch" className="px-6">
+      {/* MAIN GRID */}
       <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{
+          once: false, // 🔥 penting: biar replay setiap masuk view
+          amount: 0.3,
+        }}
         className="w-full max-w-4xl grid md:grid-cols-2 gap-12 items-center"
       >
         {/* LEFT */}
-        <motion.div variants={left}>
+        <motion.div variants={fade("right")}>
           <p className="text-xs text-zinc-500 tracking-widest uppercase">
             Get in Touch
           </p>
@@ -91,31 +61,23 @@ export default function GetInTouch() {
           </motion.a>
         </motion.div>
 
-        {/* RIGHT - REFINED TYPO */}
-        <motion.div variants={right} className="space-y-6">
+        {/* RIGHT */}
+        <motion.div variants={fade("left")} className="space-y-6">
           <p className="text-sm text-zinc-500">Reach me through</p>
 
-          {socials.map((itemData) => (
+          {socials.map((item) => (
             <motion.a
-              key={itemData.name}
-              href={itemData.href}
+              key={item.name}
+              href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              variants={item}
-              whileHover="hover"
               className="group block"
+              whileHover="hover"
+              variants={fade("up", 0.05)}
             >
-              {/* TEXT */}
               <div className="flex items-center justify-between">
-                <span
-                  className="
-                    text-xl md:text-2xl font-medium
-                    text-zinc-400 tracking-wide
-                    group-hover:text-white
-                    transition
-                  "
-                >
-                  {itemData.name}
+                <span className="text-xl md:text-2xl font-medium text-zinc-400 tracking-wide group-hover:text-white transition">
+                  {item.name}
                 </span>
 
                 <motion.span
@@ -128,25 +90,24 @@ export default function GetInTouch() {
                 </motion.span>
               </div>
 
-              {/* LINE */}
               <motion.div
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
                 whileHover={{ width: "100%" }}
                 transition={{ duration: 0.35 }}
-                className="
-                  h-px mt-2 
-                  bg-zinc-800 group-hover:bg-zinc-400
-                "
+                className="h-px mt-2 bg-zinc-800 group-hover:bg-zinc-400"
               />
             </motion.a>
           ))}
 
-          <div className="pt-6 text-xs text-zinc-500">
+          <motion.div
+            variants={fade("up")}
+            className="pt-6 text-xs text-zinc-500"
+          >
             © {new Date().getFullYear()} | Nur Afif Misbahuddin
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
-    </section>
+    </Section>
   );
 }

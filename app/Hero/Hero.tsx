@@ -1,69 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 import Link from "next/link";
-import { useSectionHash } from "@/hooks/useSectionHash";
+import { useRef, useState } from "react";
+
 import ResumeModal from "@/components/ui/ResumeModal";
 import Scroll from "@/components/ui/Scroll";
-
-const container = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const fadeUp = {
-  initial: { opacity: 0, y: 40, scale: 0.96 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut" as const,
-    },
-  },
-};
+import { fade, staggerContainer } from "@/lib/animation";
+import Section from "@/components/fullpage-snap/Section";
+import { useSectionHash } from "@/hooks/useSectionHash";
 
 export default function Hero() {
-  const ref = useRef<HTMLElement>(null);
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLElement>(null);
 
   useSectionHash(ref, "hero");
-
   return (
-    <section
+    <Section
       ref={ref}
       id="hero"
-      className="relative h-svh snap-center flex items-center justify-center px-6"
+      className="h-screen snap-start flex items-center justify-center px-6 relative"
     >
+      {/* MAIN CONTAINER (AOS GROUP STYLE) */}
       <motion.div
-        variants={container}
+        variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: false, amount: 0.5 }}
         className="flex flex-col items-center text-center"
       >
+        {/* TITLE */}
         <motion.h1
-          variants={fadeUp}
+          variants={fade("up")}
           className="text-3xl md:text-5xl font-semibold text-white"
         >
           Nur Afif Misbahuddin
         </motion.h1>
 
+        {/* SUBTITLE */}
         <motion.p
-          variants={fadeUp}
+          variants={fade("up")}
           className="mt-3 text-sm md:text-base text-zinc-400"
         >
           Fullstack Developer • Designer • Video Editor
         </motion.p>
 
+        {/* BUTTON GROUP */}
         <motion.div
-          variants={fadeUp}
+          variants={fade("up")}
           className="mt-6 flex gap-4 justify-center"
         >
           <Link
@@ -74,7 +58,6 @@ export default function Hero() {
             Portfolio
           </Link>
 
-          {/* RESUME BUTTON */}
           <button
             onClick={() => setOpen(true)}
             className="px-5 py-2 text-sm font-medium rounded-full 
@@ -86,10 +69,11 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
+      {/* SCROLL INDICATOR */}
       <Scroll />
 
       {/* MODAL */}
       <ResumeModal isOpen={open} onClose={() => setOpen(false)} />
-    </section>
+    </Section>
   );
 }

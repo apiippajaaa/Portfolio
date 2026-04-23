@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const container = {
   hidden: {},
@@ -37,14 +38,16 @@ export default function AboutHeader() {
           relative min-h-screen flex items-center
 
           w-screen
-          left-1/2 -translate-x-1/2   /* 🔥 full-bleed fix */
+          left-1/2 -translate-x-1/2  
         "
       >
         {/* BG */}
         <div className="absolute inset-0 -z-10">
-          <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop"
-            className="w-full h-full object-cover"
+          <Image
+            fill
+            priority
+            src="/images/2.png"
+            className="w-full h-full object-cover "
             alt=""
           />
 
@@ -52,7 +55,7 @@ export default function AboutHeader() {
           <div className="absolute inset-0 bg-black/50" />
 
           {/* gradient depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/30 to-black" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/5 via-black/30 to-black" />
         </div>
 
         {/* CONTENT */}
@@ -166,22 +169,24 @@ export default function AboutHeader() {
           <div className="absolute w-[110%] h-[110%] bg-white/5 blur-3xl rounded-full" />
 
           <motion.div
-            initial={{ rotate: -6 }}
-            animate={{ rotate: -6 }}
-            whileHover={{ rotate: -1, scale: 1.03 }}
+            initial={{ rotate: 6 }}
+            animate={{ rotate: 6 }}
+            whileHover={{ rotate: 0, scale: 1.03 }}
             transition={{ duration: 0.4 }}
             className="relative w-[90%] h-full"
           >
             <div className="absolute inset-0 rounded-2xl border border-zinc-700 translate-x-4 translate-y-4" />
 
             <div className="absolute inset-0 rounded-2xl overflow-hidden border border-zinc-800 bg-black">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+              <Image
+                fill
+                priority
+                src="/images/2.png"
                 className="w-full h-full object-cover transition duration-700 hover:scale-105"
                 alt=""
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
             </div>
           </motion.div>
         </motion.div>

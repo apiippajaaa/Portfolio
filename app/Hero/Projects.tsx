@@ -1,18 +1,13 @@
 "use client";
 
 import { useSectionHash } from "@/hooks/useSectionHash";
+import Section from "@/components/fullpage-snap/Section";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" as const },
-  },
-};
+import { fade, staggerContainer } from "@/lib/animation";
 
 const images = ["/1.jpg", "/2.jpg", "/3.jpg"];
 
@@ -53,10 +48,12 @@ export default function Projects() {
 
   useSectionHash(ref, "projects");
 
+  // auto rotate
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 3500);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -70,21 +67,17 @@ export default function Projects() {
   };
 
   return (
-    <section
-      ref={ref}
-      id="projects"
-      className="min-h-screen snap-start flex items-center justify-center px-6"
-    >
+    <Section ref={ref} id="projects" className="px-6">
+      {/* GRID */}
       <motion.div
+        variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: false, amount: 0.4 }}
         className="w-full max-w-4xl grid md:grid-cols-2 gap-12 items-center"
       >
-        <motion.div
-          variants={fadeUp}
-          className="text-center md:text-left flex flex-col items-center md:items-start"
-        >
+        {/* TEXT SIDE */}
+        <motion.div variants={fade("right")}>
           <p className="text-xs text-zinc-500 tracking-widest uppercase">
             Selected Work
           </p>
@@ -102,8 +95,9 @@ export default function Projects() {
           </Link>
         </motion.div>
 
+        {/* CAROUSEL SIDE */}
         <motion.div
-          variants={fadeUp}
+          variants={fade("left")}
           className="relative w-full max-w-md h-70 mx-auto"
         >
           <div className="relative w-full h-full flex items-center justify-center">
@@ -116,8 +110,8 @@ export default function Projects() {
                   src={`projects/${src}`}
                   alt={`Project ${i}`}
                   className="absolute w-[85%] h-60 md:h-65 object-cover rounded-2xl border border-zinc-800 shadow-2xl cursor-pointer"
-                  variants={cardVariants}
                   animate={position}
+                  variants={cardVariants}
                   transition={{
                     type: "spring",
                     stiffness: 260,
@@ -142,6 +136,6 @@ export default function Projects() {
           </div>
         </motion.div>
       </motion.div>
-    </section>
+    </Section>
   );
 }
