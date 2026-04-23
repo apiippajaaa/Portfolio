@@ -1,0 +1,133 @@
+{
+    "name": "Nur Afif Misbahuddin",
+    "role": "Fullstack Developer & Digital Creative",
+    "location": "Klaten, Central Java, Indonesia",
+    "email": "afifmisbahuddin7@gmail.com",
+    "phone": "+6285601569136",
+    "website": "https://afifmisbahuddin.my.id",
+    "linkedin": "https://www.linkedin.com/in/afifmisbahuddin",
+  
+    "summary": "Fullstack developer with strong focus on modern frontend development, user experience, and digital product creation. Experienced in building scalable web applications, managing projects, and creating visual content for digital marketing.",
+  
+    "experience": [
+      {
+        "title": "Technical Consultant",
+        "company": "Skinylabs Creative",
+        "location": "Klaten",
+        "period": "Jun 2025 – Present",
+        "highlights": [
+          "Identify client needs and deliver digital solutions (web, design, video, print)",
+          "Manage client relationships and project communication",
+          "Bridge business needs with technical execution",
+          "Coordinate team workflow and contribute to development",
+          "Provide maintenance services (hosting, domain, updates)"
+        ]
+      },
+      {
+        "title": "Digital Creative & Web Developer",
+        "company": "CV. Bintang Walet",
+        "location": "Klaten",
+        "period": "May 2021 – Jun 2025",
+        "highlights": [
+          "Develop and maintain websites and applications",
+          "Support digital marketing with technical and content solutions",
+          "Manage team tasks and ensure timely project delivery",
+          "Produce visual and video content for branding"
+        ]
+      },
+      {
+        "title": "Fullstack Developer & Digital Creator",
+        "company": "Freelance",
+        "location": "Klaten",
+        "period": "Feb 2021 – May 2021",
+        "highlights": [
+          "Build end-to-end web solutions (UI/UX to deployment)",
+          "Develop e-commerce platforms and dashboards",
+          "Deploy apps to VPS and Vercel",
+          "Work directly with clients from requirement to delivery"
+        ]
+      },
+      {
+        "title": "Content Creator",
+        "company": "Kulo Klaten",
+        "period": "Dec 2020 – Feb 2021",
+        "highlights": [
+          "Create and manage digital content",
+          "Produce field content (photo & video)",
+          "Manage social media engagement"
+        ]
+      },
+      {
+        "title": "Fullstack Developer & Digital Content Specialist",
+        "company": "Fenstore Concept",
+        "period": "Feb 2020 – Aug 2020",
+        "highlights": [
+          "Create visual and video content for marketing",
+          "Manage social media and ads",
+          "Build integrated business website with payment system",
+          "Maintain and optimize website performance"
+        ]
+      }
+    ],
+  
+    "projects": [
+      {
+        "name": "Skinylabs Creative Marketplace",
+        "description": "Digital assets marketplace with multi-role system and automated delivery",
+        "stack": ["Laravel", "React", "Inertia", "TypeScript", "Tailwind CSS", "Midtrans"],
+        "highlights": [
+          "Built scalable creator dashboard",
+          "Integrated payment gateway",
+          "Implemented sales tracking and notifications"
+        ]
+      },
+      {
+        "name": "REPUKU Healthcare System",
+        "description": "Healthcare information system for patient and clinic data management",
+        "stack": ["Laravel", "MySQL", "Tailwind CSS"],
+        "highlights": [
+          "Centralized medical records system",
+          "Role-based system for clinic operations",
+          "Improved efficiency and reporting accuracy"
+        ]
+      },
+      {
+        "name": "YORENTAL Car Rental System",
+        "description": "Car rental platform with dynamic pricing and booking system",
+        "stack": ["Laravel", "Alpine.js", "MySQL", "Tailwind CSS"],
+        "highlights": [
+          "Dynamic pricing system",
+          "Booking and real-time notification features",
+          "Integrated fleet and transaction management"
+        ]
+      }
+    ],
+  
+    "skills": {
+      "languages": ["PHP", "JavaScript", "TypeScript", "Java", "Python", "Go", "SQL"],
+      "frontend": ["React.js", "Next.js", "Tailwind CSS", "Inertia.js"],
+      "backend": ["Laravel", "Node.js", "Express.js", "Go"],
+      "tools": ["Git", "GitHub", "Vercel", "Postman", "Vite", "Docker"],
+      "cloud": ["REST API Development", "Serverless Architecture (AWS)", "Scalable System Design"],
+      "creative": ["CorelDRAW", "Photoshop", "Premiere Pro", "After Effects", "DaVinci Resolve"]
+    },
+  
+    "education": {
+      "institution": "Universitas Widya Dharma Klaten",
+      "degree": "Bachelor of Informatics Engineering",
+      "period": "2022 – 2026"
+    },
+  
+    "certifications": [
+      "Serverless Architecture & Scaling (AWS)",
+      "SaaS Business Fundamentals (AWS)",
+      "Fullstack Developer Course (Simplilearn)"
+    ],
+  
+    "languages": [
+      { "name": "Indonesian", "level": "Native" },
+      { "name": "English", "level": "Intermediate" }
+    ],
+  
+    "personality": "Builds clean, modern, and thoughtful user interfaces with strong focus on UX, performance, and real-world usability. Combines technical development with creative design and content production."
+  }
