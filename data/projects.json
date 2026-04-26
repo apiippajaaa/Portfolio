@@ -2,79 +2,89 @@
   "code": [
     {
       "title": "Hoksy Realtime Game",
+      "slug": "hoksy-realtime-game",
       "isCore": true,
       "description": "A realtime multiplayer hockey game built with smooth physics and WebSocket sync.",
       "image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop",
       "link": "https://github.com/yourusername/hoksy",
-      "tech": ["Next.js", "TypeScript", "WebSocket"]
+      "stack": ["Next.js", "TypeScript", "WebSocket"]
     },
     {
       "title": "API Tester Tool",
+      "slug": "api-tester-tool",
       "description": "Lightweight API testing tool built for developers.",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
       "link": "#",
-      "tech": ["Next.js", "Tailwind"]
+      "stack": ["Next.js", "Tailwind"]
     },
     {
       "title": "Portfolio Website",
+      "slug": "portfolio-website",
       "description": "Modern personal portfolio with animation and clean UI.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
       "link": "#",
-      "tech": ["Next.js", "Framer Motion"]
+      "stack": ["Next.js", "Framer Motion"]
     },
     {
       "title": "Realtime Chat App",
+      "slug": "realtime-chat-app",
       "description": "Socket-based realtime chat application.",
       "image": "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200&auto=format&fit=crop",
       "link": "#",
-      "tech": ["Node.js", "Socket.io"]
+      "stack": ["Node.js", "Socket.io"]
     }
   ],
 
   "design": [
     {
       "title": "Fintech Mobile UI",
+      "slug": "fintech-mobile-ui",
       "isCore": true,
       "description": "Clean mobile banking UI with strong usability focus.",
       "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop",
-      "tools": ["Figma", "UI/UX"]
+      "stack": ["Figma", "UI/UX"]
     },
     {
       "title": "Analytics Dashboard",
+      "slug": "analytics-dashboard",
       "description": "Data-heavy dashboard with modern layout.",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      "tools": ["Figma"]
+      "stack": ["Figma"]
     },
     {
       "title": "Landing Page Concept",
+      "slug": "landing-page-concept",
       "description": "Minimal landing page with strong typography.",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-      "tools": ["Figma"]
+      "stack": ["Figma"]
     }
   ],
 
   "video": [
     {
       "title": "Cinematic Product Video",
+      "slug": "cinematic-product-video",
       "isCore": true,
       "description": "High-end cinematic product showcase.",
       "image": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=1200&auto=format&fit=crop",
       "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U",
-      "tools": ["Figma", "UI/UX"]
+      "stack": ["After Effects", "Premiere Pro"]
     },
     {
       "title": "Brand Motion Intro",
+      "slug": "brand-motion-intro",
       "description": "Short animated intro for branding.",
       "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop",
       "videoUrl": "https://www.youtube.com/embed/LXb3EKWsInQ",
-      "tools": ["Figma"]
+      "stack": ["After Effects"]
     },
     {
       "title": "Creative Reel",
+      "slug": "creative-reel",
       "description": "Compilation of creative works.",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",  
-      "tools": ["Figma"]
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "stack": ["Premiere Pro"]
     }
   ]
 }

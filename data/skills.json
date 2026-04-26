@@ -6,16 +6,21 @@
       { "name": "Next.js" },
       { "name": "React.js" },
       { "name": "TypeScript" },
-      { "name": "JavaScript" },
+      { "name": "JavaScript (ES6+)" },
       { "name": "Tailwind CSS" },
       { "name": "ShadCN UI" },
       { "name": "Framer Motion" },
       { "name": "Zustand" },
-      { "name": "Redux" },
-      { "name": "Bootstrap" },
+      { "name": "Redux Toolkit" },
+      { "name": "React Query / TanStack Query" },
+      { "name": "Axios / Fetch API" },
       { "name": "Vite" },
+      { "name": "Webpack" },
       { "name": "HTML5" },
-      { "name": "CSS3" }
+      { "name": "CSS3 / SCSS" },
+      { "name": "Responsive Design" },
+      { "name": "Web Performance Optimization" },
+      { "name": "SEO Basics" }
     ]
   },
   {
@@ -29,12 +34,16 @@
       { "name": "Express.js" },
       { "name": "Go (Golang)" },
       { "name": "REST API" },
+      { "name": "GraphQL" },
+      { "name": "Authentication (JWT / OAuth)" },
       { "name": "MySQL" },
       { "name": "PostgreSQL" },
       { "name": "MongoDB" },
-      { "name": "Prisma" },
+      { "name": "Prisma ORM" },
       { "name": "Firebase" },
-      { "name": "Redis" }
+      { "name": "Redis (Caching)" },
+      { "name": "Microservices Basics" },
+      { "name": "API Security & Rate Limiting" }
     ]
   },
   {
@@ -43,31 +52,47 @@
     "skills": [
       { "name": "Git" },
       { "name": "GitHub" },
+      { "name": "GitHub Actions (CI/CD)" },
       { "name": "Postman" },
       { "name": "Docker" },
       { "name": "Vercel" },
-      { "name": "Google Cloud" },
-      { "name": "Linux / VPS" }
+      { "name": "Netlify" },
+      { "name": "Google Cloud Platform" },
+      { "name": "AWS (Basic)" },
+      { "name": "Linux / VPS" },
+      { "name": "Nginx" },
+      { "name": "Environment Management (.env)" },
+      { "name": "Deployment Automation" }
     ]
   },
   {
     "title": "Design",
-    "description": "Designing visuals for branding, UI, and digital media.",
+    "description": "Designing visuals for branding, UI, and digital experiences.",
     "skills": [
       { "name": "Figma" },
+      { "name": "UI/UX Design" },
+      { "name": "Design Systems" },
+      { "name": "Wireframing & Prototyping" },
       { "name": "Adobe Photoshop" },
       { "name": "Adobe Illustrator" },
       { "name": "CorelDRAW" },
-      { "name": "Canva" }
+      { "name": "Canva" },
+      { "name": "Typography & Layout" },
+      { "name": "Color Theory" }
     ]
   },
   {
     "title": "Video & Motion",
-    "description": "Producing video and motion content for storytelling and promotion.",
+    "description": "Producing video and motion content for storytelling and digital media.",
     "skills": [
       { "name": "Adobe Premiere Pro" },
       { "name": "After Effects" },
-      { "name": "DaVinci Resolve" }
+      { "name": "DaVinci Resolve" },
+      { "name": "Motion Graphics" },
+      { "name": "Video Editing" },
+      { "name": "Color Grading" },
+      { "name": "Sound Design Basics" },
+      { "name": "Storyboarding" }
     ]
   },
   {
@@ -76,7 +101,11 @@
     "skills": [
       { "name": "Flutter" },
       { "name": "Dart" },
-      { "name": "Android Studio" }
+      { "name": "Android Studio" },
+      { "name": "REST API Integration" },
+      { "name": "State Management (Provider / Riverpod)" },
+      { "name": "Firebase Integration" },
+      { "name": "App Deployment (Play Store)" }
     ]
   }
 ]
