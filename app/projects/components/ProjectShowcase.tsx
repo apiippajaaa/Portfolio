@@ -8,15 +8,16 @@ import { motion, Variants } from "framer-motion";
 import ProjectCarousel from "@/components/ui/carousel/ProjectCarousel";
 import ProjectCard from "./showcase/ProjectCard";
 
+/* ================= TYPE ================= */
 type ProjectItem = {
   title: string;
+  slug: string;
   description?: string;
-  image: string;
-  tech?: string[];
-  tools?: string[];
-  link?: string;
-  videoUrl?: string;
   isCore?: boolean;
+  heroImage: string;
+  images?: string[];
+  stack: string[];
+  videoUrl?: string;
 };
 
 /* ================= ANIMATION ================= */
@@ -33,10 +34,7 @@ const item: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut", // ✅ FIX
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
@@ -97,6 +95,7 @@ export default function ProjectShowcase() {
   };
 
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   const core = code.find((i) => i.isCore);
 
   return (
@@ -106,7 +105,7 @@ export default function ProjectShowcase() {
         variants={section}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false }} // ✅ REPEAT
+        viewport={{ once: false }}
         className="max-w-6xl mx-auto px-5 md:px-10 space-y-16"
       >
         <SectionHeader
@@ -115,6 +114,7 @@ export default function ProjectShowcase() {
           subtitle="Engineering systems & web applications"
         />
 
+        {/* CORE PROJECT */}
         {core && (
           <motion.div
             variants={item}
@@ -129,7 +129,7 @@ export default function ProjectShowcase() {
 
               <div className="hidden md:block">
                 <Link
-                  href={core.link || "#"}
+                  href={`/projects/explore/${core.slug}`}
                   className="text-sm text-white/80 border-b border-white/20"
                 >
                   View Details →
@@ -139,7 +139,7 @@ export default function ProjectShowcase() {
 
             <motion.div whileHover={{ scale: 1.02 }}>
               <Image
-                src={core.image}
+                src={core.heroImage}
                 alt={core.title}
                 width={800}
                 height={400}
@@ -149,6 +149,7 @@ export default function ProjectShowcase() {
           </motion.div>
         )}
 
+        {/* GRID */}
         <motion.div
           variants={item}
           className="hidden md:grid grid-cols-3 gap-6"
@@ -156,17 +157,21 @@ export default function ProjectShowcase() {
           {code
             .filter((i) => !i.isCore)
             .slice(0, 6)
-            .map((p, i) => (
-              <ProjectCard key={i} project={p} />
+            .map((p) => (
+              <ProjectCard key={p.slug} project={p} />
             ))}
         </motion.div>
 
+        {/* MOBILE CAROUSEL */}
         <ProjectCarousel items={code.filter((i) => !i.isCore)} />
 
-        <AppleButton href="/work/code" label="Explore All Development" />
+        <AppleButton
+          href="/projects/explore/"
+          label="Explore All Development"
+        />
       </motion.section>
 
-      {/* DESIGN */}
+      {/* ================= DESIGN ================= */}
       <motion.section
         variants={section}
         initial="hidden"
@@ -184,8 +189,8 @@ export default function ProjectShowcase() {
           variants={item}
           className="hidden md:grid grid-cols-3 gap-6"
         >
-          {design.slice(0, 6).map((p, i) => (
-            <ProjectCard key={i} project={p} />
+          {design.slice(0, 6).map((p) => (
+            <ProjectCard key={p.slug} project={p} />
           ))}
         </motion.div>
 
@@ -194,7 +199,7 @@ export default function ProjectShowcase() {
         <AppleButton href="/work/design" label="Explore All Design" />
       </motion.section>
 
-      {/* VIDEO */}
+      {/* ================= VIDEO ================= */}
       <motion.section
         variants={section}
         initial="hidden"
@@ -212,9 +217,9 @@ export default function ProjectShowcase() {
           variants={item}
           className="hidden md:grid grid-cols-3 gap-6"
         >
-          {video.slice(0, 6).map((p, i) => (
+          {video.slice(0, 6).map((p) => (
             <ProjectCard
-              key={i}
+              key={p.slug}
               project={p}
               clickable
               onClick={() => p.videoUrl && setActiveVideo(p.videoUrl)}
@@ -230,7 +235,7 @@ export default function ProjectShowcase() {
         <AppleButton href="/work/video" label="Explore All Video" />
       </motion.section>
 
-      {/* MODAL */}
+      {/* ================= MODAL ================= */}
       {activeVideo && (
         <motion.div
           initial={{ opacity: 0 }}

@@ -3,15 +3,7 @@
 import { motion } from "framer-motion";
 import { useCarousel } from "@/hooks/useCarousel";
 import ProjectCard from "@/app/projects/components/showcase/ProjectCard";
-
-type ProjectItem = {
-  title: string;
-  description?: string;
-  image: string;
-  tech?: string[];
-  tools?: string[];
-  videoUrl?: string;
-};
+import { ProjectItem } from "@/types/Project";
 
 export default function ProjectCarousel({
   items,
@@ -24,7 +16,7 @@ export default function ProjectCarousel({
 
   return (
     <div className="relative lg:hidden overflow-hidden">
-      {/* ================= NAV (NEMPEL IMAGE) ================= */}
+      {/* ================= NAV ================= */}
       <div className="absolute inset-x-0 top-[100px] flex justify-between px-3 z-30 pointer-events-none">
         {/* LEFT */}
         <button
@@ -36,7 +28,6 @@ export default function ProjectCarousel({
             flex items-center justify-center
             backdrop-blur-xl border border-white/10
             transition-all duration-300
-            
             ${
               isStart
                 ? "opacity-30"
@@ -59,7 +50,6 @@ export default function ProjectCarousel({
             flex items-center justify-center
             backdrop-blur-xl border border-white/10
             transition-all duration-300
-            
             ${
               isEnd
                 ? "opacity-30"
@@ -68,7 +58,7 @@ export default function ProjectCarousel({
           `}
         >
           <svg viewBox="0 0 320 512" className="w-3.5 h-3.5 fill-white/80">
-            <path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s-32.8-12.5 45.3 0l192 192z" />
+            <path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s-32.8-12.5-45.3 0l192 192z" />
           </svg>
         </button>
       </div>
@@ -81,14 +71,12 @@ export default function ProjectCarousel({
           type: "spring",
           stiffness: 120,
           damping: 20,
-          mass: 1,
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.05}
         onDragEnd={(e, info) => {
           const threshold = 70;
-
           if (info.offset.x < -threshold && !isEnd) next();
           if (info.offset.x > threshold && !isStart) prev();
         }}
@@ -97,7 +85,7 @@ export default function ProjectCarousel({
           const isActive = i === active;
 
           return (
-            <div key={i} className="w-full shrink-0">
+            <div key={item.slug} className="w-full shrink-0">
               <motion.div
                 animate={{
                   scale: isActive ? 1 : 0.965,
@@ -120,7 +108,7 @@ export default function ProjectCarousel({
         })}
       </motion.div>
 
-      {/* ================= DOT INDICATOR ================= */}
+      {/* ================= DOT ================= */}
       <div className="flex justify-center mt-6 gap-2">
         {items.map((_, i) => {
           const isActive = i === active;
@@ -139,14 +127,10 @@ export default function ProjectCarousel({
                   width: isActive ? 18 : 6,
                   opacity: isActive ? 1 : 0.4,
                 }}
-                transition={{
-                  duration: 0.35,
-                  ease: "easeOut",
-                }}
+                transition={{ duration: 0.35 }}
                 className="h-[6px] rounded-full bg-white"
               />
 
-              {/* subtle glow */}
               {isActive && (
                 <motion.span
                   layoutId="dot-glow"
