@@ -1,19 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export function useCarousel(length: number) {
+type Options = {
+  loop?: boolean;
+  autoplay?: boolean;
+  interval?: number;
+};
+
+export function useCarousel(length: number, options?: Options) {
+  const { loop = false, autoplay = false, interval = 3000 } = options || {};
+
   const [active, setActive] = useState(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const isStart = active === 0;
   const isEnd = active === length - 1;
 
+  /* ================= NAVIGATION ================= */
   const next = () => {
-    if (!isEnd) setActive((prev) => prev + 1);
+    setActive((prev) => {
+      if (prev === length - 1) return loop ? 0 : prev;
+      return prev + 1;
+    });
   };
 
   const prev = () => {
-    if (!isStart) setActive((prev) => prev - 1);
+    setActive((prev) => {
+      if (prev === 0) return loop ? length - 1 : prev;
+      return prev - 1;
+    });
   };
 
   const goTo = (index: number) => {
@@ -21,6 +37,46 @@ export function useCarousel(length: number) {
       setActive(index);
     }
   };
+
+  /* ================= SCROLL SYNC ================= */
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      const scrollLeft = el.scrollLeft;
+      const width = el.clientWidth;
+
+      const index = Math.round(scrollLeft / width);
+      setActive(index);
+    };
+
+    el.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /* ================= AUTO PLAY ================= */
+  useEffect(() => {
+    if (!autoplay) return;
+
+    const id = setInterval(() => {
+      next();
+    }, interval);
+
+    return () => clearInterval(id);
+  }, [autoplay, interval]);
+
+  /* ================= SCROLL TO ACTIVE ================= */
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    el.scrollTo({
+      left: el.clientWidth * active,
+      behavior: "smooth",
+    });
+  }, [active]);
 
   return {
     active,
@@ -30,5 +86,6 @@ export function useCarousel(length: number) {
     isStart,
     isEnd,
     length,
+    containerRef,
   };
 }
