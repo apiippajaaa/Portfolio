@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 type ProjectItem = {
   title: string;
+  slug: string; // 🔥 tambahin ini
   description?: string;
   heroImage: string;
   stack: string[];
@@ -29,6 +31,19 @@ export default function ProjectCard({
   onClick?: () => void;
   clickable?: boolean;
 }) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    // 🔥 priority: kalau ada custom onClick (misal video)
+    if (onClick) {
+      onClick();
+      return;
+    }
+
+    // 🔥 default redirect
+    router.push(`/projects/explore/${project.slug}`);
+  };
+
   return (
     <motion.div
       variants={container}
@@ -37,10 +52,8 @@ export default function ProjectCard({
       viewport={{ once: false, margin: "-80px" }}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 200, damping: 18 }}
-      onClick={onClick}
-      className={`group flex flex-col ${
-        clickable ? "cursor-pointer active:scale-[0.97]" : ""
-      }`}
+      onClick={handleClick}
+      className={`group flex flex-col cursor-pointer active:scale-[0.97]`}
     >
       {/* IMAGE */}
       <div className="relative overflow-hidden rounded-xl">

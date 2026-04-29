@@ -17,4 +17,11 @@ export type ProjectItem = {
   link?: string;
 };
 
+
+export type ProjectData = {
+  code: ProjectItem[];
+  design: ProjectItem[];
+  video: ProjectItem[];
+};
+
 export type SectionType = "code" | "design" | "video";

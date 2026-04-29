@@ -50,6 +50,21 @@ export default function ImagePreviewModal({
   const prevIndex = (active - 1 + images.length) % images.length;
   const nextIndex = (active + 1) % images.length;
 
+  useEffect(() => {
+    const body = document.body;
+
+    const scrollBarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    body.style.overflow = "hidden";
+    body.style.paddingRight = `${scrollBarWidth}px`;
+
+    return () => {
+      body.style.overflow = "";
+      body.style.paddingRight = "";
+    };
+  }, []);
+
   return (
     <AnimatePresence mode="popLayout" initial={false}>
       <motion.div

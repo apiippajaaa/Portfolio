@@ -4,18 +4,7 @@ import data from "@/data/projects.json";
 import ProjectCard from "@/app/projects/components/showcase/ProjectCard";
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
-
-type ProjectItem = {
-  title: string;
-  slug: string;
-  description?: string;
-  image: string;
-  tech?: string[];
-  tools?: string[];
-  link?: string;
-  videoUrl?: string;
-  isCore?: boolean;
-};
+import { ProjectItem } from "@/types/Project";
 
 /* ================= ANIMATION ================= */
 const container: Variants = {
