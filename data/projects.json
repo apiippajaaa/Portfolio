@@ -34,24 +34,60 @@
       "title": "Repuku — Healthcare Digital System",
       "slug": "repuku-healthcare",
       "description": "Sistem digital layanan kesehatan untuk mengelola data pasien dan operasional dengan alur kerja yang efisien dan terstruktur.",
-      "heroImage": "/images/project/repuku.webp",
-      "images": [],
+      "heroImage": "/images/projects/repuku/hero.webp",
+      "images": [
+        "/images/projects/repuku/1.webp",
+        "/images/projects/repuku/2.webp",
+        "/images/projects/repuku/3.webp",
+        "/images/projects/repuku/4.webp",
+        "/images/projects/repuku/5.webp",
+        "/images/projects/repuku/6.webp",
+        "/images/projects/repuku/7.webp",
+        "/images/projects/repuku/8.webp",
+        "/images/projects/repuku/9.webp",
+        "/images/projects/repuku/10.webp",
+        "/images/projects/repuku/11.webp"
+      ],
       "stack": ["Laravel", "Tailwind CSS", "Alpine JS"]
     },
     {
       "title": "KakaTours — Smart Travel Booking Platform",
       "slug": "kakatours-booking",
       "description": "Platform booking travel dengan manajemen paket dinamis dan alur pemesanan yang simpel dari eksplorasi hingga checkout.",
-      "heroImage": "/images/project/kakatours.webp",
-      "images": [],
+      "heroImage": "/images/projects/kakatours/hero.webp",
+     "images": [
+        "/images/projects/kakatours/1.webp",
+        "/images/projects/kakatours/2.webp",
+        "/images/projects/kakatours/3.webp",
+        "/images/projects/kakatours/4.webp",
+        "/images/projects/kakatours/5.webp",
+        "/images/projects/kakatours/6.webp",
+        "/images/projects/kakatours/7.webp",
+        "/images/projects/kakatours/8.webp",
+        "/images/projects/kakatours/9.webp",
+        "/images/projects/kakatours/10.webp",
+        "/images/projects/kakatours/11.webp"
+      ],
       "stack": ["Laravel", "Tailwind CSS", "Alpine JS"]
     },
     {
       "title": "YoRental — Car Rental Management System",
       "slug": "yorental-system",
       "description": "Sistem rental mobil end-to-end untuk mengelola armada, reservasi, dan transaksi dalam satu dashboard terintegrasi.",
-      "heroImage": "/images/project/yorental.webp",
-      "images": [],
+      "heroImage": "/images/projects/yorental/hero.webp",
+      "images": [
+        "/images/projects/kakatours/1.webp",
+        "/images/projects/kakatours/2.webp",
+        "/images/projects/kakatours/3.webp",
+        "/images/projects/kakatours/4.webp",
+        "/images/projects/kakatours/5.webp",
+        "/images/projects/kakatours/6.webp",
+        "/images/projects/kakatours/7.webp",
+        "/images/projects/kakatours/8.webp",
+        "/images/projects/kakatours/9.webp",
+        "/images/projects/kakatours/10.webp",
+        "/images/projects/kakatours/11.webp"
+      ],
       "stack": ["Laravel", "Tailwind CSS", "Alpine JS"]
     },
     {

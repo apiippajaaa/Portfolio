@@ -9,6 +9,7 @@ type ProjectItem = {
   slug: string; // 🔥 tambahin ini
   description?: string;
   heroImage: string;
+  images: string;
   stack: string[];
   videoUrl?: string;
 };

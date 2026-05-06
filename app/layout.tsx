@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen bg-black text-white antialiased overflow-x-hidden">
+      <body className="min-h-screen antialiased overflow-x-hidden">
         <Background />
 
         {/* GLOBAL UI */}
